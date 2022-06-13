@@ -1,0 +1,27 @@
+.Location {
+    width: 80%;
+    margin: 3.2rem auto;
+    padding: 2rem;
+
+    text-align: center;
+
+    background-color: var(--card-background);
+}
+
+.Location-name {
+    margin: 0;
+}
+
+.Location-features {
+    margin: 2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    list-style: none;
+}
+
+.Location-feature span {
+    font-weight: 700;
+}
