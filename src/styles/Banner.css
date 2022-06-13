@@ -1,0 +1,23 @@
+.Banner {
+    position: relative;
+    
+    width: 100vw;
+}
+
+.Banner-img {
+    width: 100%;
+}
+
+.Banner-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 30.27%;
+
+    transform: translate(-50%, -24%);
+}
+
+.title-img {
+    max-width: 100%;
+}
