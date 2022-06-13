@@ -1,0 +1,26 @@
+:root {
+  --background-color: #05292E;
+  --card-background: #062226;
+  --color-letter: #FBFBFB;
+  --color-features: #7E7E7E;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+
+  color: var(--color-letter);
+  background-color: var(--background-color);
+}
+
+body {
+  margin: 0;
+  
+  font-size: 1.6rem;
+}
