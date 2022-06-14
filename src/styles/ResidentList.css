@@ -1,0 +1,5 @@
+.ResidentList__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-gap: 1.6rem;
+}

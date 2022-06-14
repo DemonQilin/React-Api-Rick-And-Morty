@@ -1,0 +1,85 @@
+.ResidentInfo {
+    position: relative;
+
+    min-width: 256px;
+
+    background-color: var(--card-background);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.ResidentInfo__img img {
+    width: 100%;
+}
+
+.ResidentInfo__info {
+    padding: 1rem;
+}
+
+.ResidentInfo__name {
+    margin: 0;
+
+    font-size: 2.8rem;
+    font-weight: 400;
+
+    border-bottom: 0.5px solid #084851;
+}
+
+.ResidentInfo__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    list-style: none;
+}
+
+.ResidentInfo__item {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+}
+
+.ResidentInfo span {
+    display: block;
+
+    font-size: 1.3rem;
+    text-transform: uppercase;
+
+    color: var(--color-features);
+}
+
+.ResidentInfo__state {
+    position: absolute;
+    top: 5%;
+    left: 0;
+
+    width: 100px;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1.2rem;
+
+    background-color: var(--card-background);
+    border-radius: 0 12px 12px 0;
+}
+
+.ResidentInfo__state::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: block;
+
+    border-radius: 50%;
+    background-color: var(--color-features);
+}
+
+.ResidentInfo__state--red::before {
+    background-color: #B94343;
+}
+
+.ResidentInfo__state--green::before {
+    background-color: #4C9B4C;
+}
