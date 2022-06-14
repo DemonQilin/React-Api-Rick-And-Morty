@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ResidentInfo from './ResidentInfo';
 import '../styles/ResidentList.css';
+import NotFound from './NotFound';
 
 const ResidentList = ({ location }) => {
     const [residents, setResidents] = useState([]);
@@ -31,7 +32,9 @@ const ResidentList = ({ location }) => {
                             resident={resident}
                             key={resident.id}
                         />)
-                        : console.log('No!')
+                        : location?.error
+                            ? <NotFound />
+                            : <p>Cargando...</p>
                 }
             </section>
         </section>

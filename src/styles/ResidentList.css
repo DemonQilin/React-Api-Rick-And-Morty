@@ -3,3 +3,7 @@
     grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
     grid-gap: 1.6rem;
 }
+
+.ResidentList__list {
+    position: relative;
+}
