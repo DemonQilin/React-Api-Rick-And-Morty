@@ -24,3 +24,8 @@ body {
   
   font-size: 1.6rem;
 }
+
+h1 {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  text-align: center;
+}

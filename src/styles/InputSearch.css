@@ -1,0 +1,28 @@
+.InputSearch {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.InputSearch__input {
+    flex-grow: 1;
+    padding: 2rem;
+
+    text-align: center;
+
+    background-color: var(--card-background);
+    color: var(--color-letter);
+    border: none;
+}
+
+.InputSearch__button {
+    font-weight: 600;
+
+    background-color: var(--background-color);
+    color: var(--color-letter);
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-width: 1px;
+}
