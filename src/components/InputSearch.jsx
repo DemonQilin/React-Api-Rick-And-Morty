@@ -16,7 +16,7 @@ const InputSearch = ({handlerSubmit}) => {
             >
                 <input
                     type="text"
-                    placeholder="Escribe una ubicación"
+                    placeholder="Escribe el id de una ubicación (1 a 126)"
                     onInput={handlerInput}
                     value={inputValue}
                     className="InputSearch__input"
