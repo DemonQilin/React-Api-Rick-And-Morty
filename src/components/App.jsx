@@ -4,6 +4,7 @@ import Banner from './Banner'
 import InputSearch from './InputSearch';
 import Location from './Location'
 import ResidentList from './ResidentList';
+import Footer from './Footer';
 
 const App = () => {
     const [url, setUrl] = useState(`https://rickandmortyapi.com/api/location/${1 + Math.round(Math.random() * 125)}`)
@@ -22,8 +23,9 @@ const App = () => {
                 <h1>Wiki de lugares de Rick and Morty</h1>
                 <InputSearch handlerSubmit={handlerSubmit}/>
                 <Location location={location} />
-                <ResidentList location={location}/>
+                <ResidentList location={location} />
             </div>
+            <Footer />
         </>
     )
 }
