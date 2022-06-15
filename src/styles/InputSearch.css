@@ -26,4 +26,6 @@
     border-right-color: black;
     border-bottom-color: black;
     border-top-width: 1px;
+
+    cursor: pointer;
 }

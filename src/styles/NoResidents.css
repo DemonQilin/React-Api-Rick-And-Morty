@@ -1,0 +1,13 @@
+.NoResidents__text {
+    text-align: center;
+}
+
+.NoResidents__img {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.NoResidents__img img {
+    width: 100%;
+    max-width: 300px;
+}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useLocation } from '../hooks/useLocation';
 import Banner from './Banner'
 import InputSearch from './InputSearch';
@@ -7,7 +7,8 @@ import ResidentList from './ResidentList';
 import Footer from './Footer';
 
 const App = () => {
-    const [url, setUrl] = useState(`https://rickandmortyapi.com/api/location/${1 + Math.round(Math.random() * 125)}`)
+    const [url, setUrl] = useState(``);
+    const [locations, setLocations] = useState([]);
     const location = useLocation(url);
     
     const handlerSubmit = (e,setInputValue) => {
@@ -15,6 +16,19 @@ const App = () => {
         setUrl(`https://rickandmortyapi.com/api/location/${e.target.location.value}`);
         setInputValue('');
     }
+
+    useEffect(() => {
+        const getLocations = async () => {
+            const data = await fetch(`https://rickandmortyapi.com/api/location/`).then(res => res.json());setLocations(data.results.map(location => {
+                return {
+                    id: location.id,
+                    name: location.name
+                }
+            }));
+            setUrl(`https://rickandmortyapi.com/api/location/${1 + Math.round(Math.random() * (data.info.count - 1))}`);
+        }
+        getLocations();
+    },[])
 
     return (
         <>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ResidentInfo from './ResidentInfo';
 import '../styles/ResidentList.css';
 import NotFound from './NotFound';
+import NoResidents from './NoResidents';
 
 const ResidentList = ({ location }) => {
     const [residents, setResidents] = useState([]);
@@ -32,12 +33,14 @@ const ResidentList = ({ location }) => {
             }>
                 {
                     (!location?.error && location !== undefined)
-                        ? residents.map(resident => <ResidentInfo
+                        ? location?.residents.length > 0
+                            ? residents.map(resident => <ResidentInfo
                             resident={resident}
-                            key={resident.id}
-                        />)
+                                key={resident.id}
+                            />)
+                            : <NoResidents />
                         : location?.error
-                            ? <NotFound />
+                            ? <NotFound location={location} />
                             : <p>Cargando...</p>
                 }
             </section>
