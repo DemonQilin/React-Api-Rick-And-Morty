@@ -4,6 +4,36 @@
     grid-gap: 1.6rem;
 }
 
+@media screen and (min-width: 660px) {
+    .ResidentList--few {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .ResidentList--few {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1340px) {
+    .ResidentList--few {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1680px) {
+    .ResidentList--few {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media screen and (min-width: 2020px) {
+    .ResidentList--few {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
 .ResidentList__list {
     position: relative;
 }
