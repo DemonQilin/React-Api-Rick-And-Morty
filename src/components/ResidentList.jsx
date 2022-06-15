@@ -25,7 +25,11 @@ const ResidentList = ({ location }) => {
     return (
         <section className='ResidentList'>
             <h2 className='ResidentList__title'>Habitantes</h2>
-            <section className={"ResidentList__list" + (location?.residents.length <= 6 ? ' ResidentList--few' : '')}>
+            <section className={
+                location?.residents.length > 0
+                    ? "ResidentList__list" + (location?.residents.length <= 6 ? ' ResidentList--few' : '')
+                    : 'Residents__list--nothing'
+            }>
                 {
                     (!location?.error && location !== undefined)
                         ? residents.map(resident => <ResidentInfo

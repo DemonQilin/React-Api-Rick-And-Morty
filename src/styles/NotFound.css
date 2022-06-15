@@ -2,7 +2,6 @@
     margin: 0 auto;
     width: fit-content;
     text-align: center;
-    z-index: 4
 }
 
 .NotFound span {
@@ -14,6 +13,14 @@
     overflow: hidden;
     width: fit-content;
     height: max-content;
+}
+
+@media screen and (max-width: 600px) {
+    .NotFound span {
+        margin: 0 auto;
+
+        font-size: 10em;
+    }
 }
 
 .NotFound span::first-letter {
