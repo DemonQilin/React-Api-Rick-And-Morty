@@ -1,0 +1,31 @@
+.InputSearch__list {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    max-height: 200px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+
+    background-color: #222;
+
+    transform: translateY(100%);
+    list-style-type: none;
+    overflow-y: auto;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.InputSearch__item {
+    padding: 0.5rem 1rem;
+
+    color: lightseagreen;
+
+    cursor: pointer;
+}

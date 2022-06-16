@@ -9,6 +9,8 @@
 
 .Location-name {
     margin: 0;
+
+    color: chartreuse;
 }
 
 .Location-features {
@@ -23,4 +25,6 @@
 
 .Location-feature span {
     font-weight: 700;
+
+    color: hsl(90, 50%, 50%);
 }

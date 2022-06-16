@@ -4,8 +4,15 @@
     align-items: stretch;
 }
 
-.InputSearch__input {
+.InputSearch__container {
+    position: relative;
+
     flex-grow: 19;
+    min-width: 195px;
+}
+
+.InputSearch__input {
+    width: 100%;
     min-width: 195px;
     padding: 2rem;
 

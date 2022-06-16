@@ -28,6 +28,8 @@ body {
 h1 {
   font-family: 'Kdam Thmor Pro', sans-serif;
   text-align: center;
+
+  color: lightseagreen;
 }
 
 .content {
