@@ -27,6 +27,7 @@ const InputSearch = ({handlerSubmit, locations}) => {
                         className="InputSearch__input"
                         name='location'
                         onFocus={e => document.querySelector('ul.InputSearch__list').classList.add('visible')}
+                        onBlur={e => setTimeout(() => { document.querySelector('ul.InputSearch__list').classList.remove('visible') }, 200)}
                     />
                     <InputSearchList
                         input={inputValue}
