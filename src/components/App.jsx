@@ -49,7 +49,10 @@ const App = () => {
                 <h1>Wiki de lugares de Rick and Morty</h1>
                 <InputSearch handlerSubmit={handlerSubmit} locations={locations}/>
                 <Location location={location} />
-                <ResidentList location={location} />
+                <ResidentList
+                    location={location}
+                    quantyCardsPerPage={20}
+                />
             </div>
             <Footer />
         </>

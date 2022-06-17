@@ -3,9 +3,11 @@ import ResidentInfo from './ResidentInfo';
 import '../styles/ResidentList.css';
 import NotFound from './NotFound';
 import NoResidents from './NoResidents';
+import Pagination from './Pagination';
 
-const ResidentList = ({ location }) => {
+const ResidentList = ({ location , quantyCardsPerPage}) => {
     const [residents, setResidents] = useState([]);
+    const [limitList, setLimitList] = useState(quantyCardsPerPage);
 
     useEffect(() => {
         const loadResidents = async () => {
@@ -28,13 +30,21 @@ const ResidentList = ({ location }) => {
             <h2 className='ResidentList__title'>Habitantes</h2>
             <section className={
                 location?.residents.length > 0
-                    ? "ResidentList__list" + (location?.residents.length <= 6 ? ' ResidentList--few' : '')
+                    ? "ResidentList__list" + (
+                        quantyCardsPerPage <= 6
+                            ? ' ResidentList--few'
+                            : (limitList % quantyCardsPerPage === 0)
+                                ? ''
+                                : (limitList % quantyCardsPerPage <= 6)
+                                    ? ' ResidentList--few'
+                                    : ''
+                    )
                     : 'Residents__list--nothing'
             }>
                 {
                     (!location?.error && location !== undefined)
                         ? location?.residents.length > 0
-                            ? residents.map(resident => <ResidentInfo
+                            ? residents.slice((Number.isInteger(limitList / quantyCardsPerPage) ? (Math.floor(limitList / quantyCardsPerPage) - 1) : Math.floor(limitList / quantyCardsPerPage)) * quantyCardsPerPage, limitList).map(resident => <ResidentInfo
                             resident={resident}
                                 key={resident.id}
                             />)
@@ -44,6 +54,12 @@ const ResidentList = ({ location }) => {
                             : <p>Cargando...</p>
                 }
             </section>
+            {location?.residents.length > 0 && <Pagination
+                residents={residents}
+                setLimitList={setLimitList}
+                quantyCardsPerPage = {quantyCardsPerPage}
+            />
+            }
         </section>
     )
 }
