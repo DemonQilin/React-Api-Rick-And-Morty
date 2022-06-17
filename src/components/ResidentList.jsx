@@ -31,13 +31,15 @@ const ResidentList = ({ location , quantyCardsPerPage}) => {
             <section className={
                 location?.residents.length > 0
                     ? "ResidentList__list" + (
-                        quantyCardsPerPage <= 6
+                        location?.residents.length <= 6
                             ? ' ResidentList--few'
-                            : (limitList % quantyCardsPerPage === 0)
-                                ? ''
-                                : (limitList % quantyCardsPerPage <= 6)
-                                    ? ' ResidentList--few'
-                                    : ''
+                            : quantyCardsPerPage <= 6
+                                ? ' ResidentList--few'
+                                : (limitList % quantyCardsPerPage === 0)
+                                    ? ''
+                                    : (limitList % quantyCardsPerPage <= 6)
+                                        ? ' ResidentList--few'
+                                        : ''
                     )
                     : 'Residents__list--nothing'
             }>

@@ -5,6 +5,7 @@ const Pagination = ({ residents, setLimitList, quantyCardsPerPage}) => {
     const [pagines, setPagines] = useState([]);
     const handlerPage = (e) => {
         setLimitList(e.target.value)
+        console.log('Hola del handler',e.target)
     }
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const Pagination = ({ residents, setLimitList, quantyCardsPerPage}) => {
         }
         setPagines(newPagines);
     }, [residents]);
+
     return (
         <div className="Pagination">
             {pagines.map(pagine => (
