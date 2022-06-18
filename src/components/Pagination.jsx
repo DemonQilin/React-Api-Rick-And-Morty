@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Pagination.css';
 
 const Pagination = ({ residents, setLimitList, quantyCardsPerPage}) => {
     const [pagines, setPagines] = useState([]);
+    const $firsOption = useRef(null);
     const handlerPage = (e) => {
         setLimitList(e.target.value)
         console.log('Hola del handler',e.target)
@@ -19,6 +20,8 @@ const Pagination = ({ residents, setLimitList, quantyCardsPerPage}) => {
             });
         }
         setPagines(newPagines);
+        setTimeout(() => { $firsOption.current ? $firsOption.current.click() : null }, 100)
+        // $firsOption.current ? $firsOption.current.click() : null
     }, [residents]);
 
     return (
@@ -33,7 +36,8 @@ const Pagination = ({ residents, setLimitList, quantyCardsPerPage}) => {
                         className="Pagination__input"
                         value={pagine.limit}
                         defaultChecked={pagine.id === 1 ? true : false}
-                        onChange={handlerPage}
+                        ref={pagine.id === 1 ? $firsOption : null}
+                        onClick={handlerPage}
                     />
                     <label
                         htmlFor={pagine.id}
